@@ -1,7 +1,6 @@
 const add = document.getElementById('add-btn')
 const body = document.getElementById('maindiv-body')
 const headtxt = document.getElementById('maindiv-head-txt')
-
 add.addEventListener('click',function(){
 if(headtxt.value.trim() !=0){
     let localitems=JSON.parse(localStorage.getItem('localitem'))
