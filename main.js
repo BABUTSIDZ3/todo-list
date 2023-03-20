@@ -16,9 +16,7 @@ if(headtxt.value.trim() !=0){
 })
 
 function showlist(){
-
     let output=''
-
     let localitems=JSON.parse(localStorage.getItem('localitem'))
     if(localitems===null){
         tasklist=[]
@@ -32,7 +30,6 @@ function showlist(){
     <button class="deletetask" onCliCk="deleteitem(${index})">delete</button>
         </div>
         `
-        
     });
     body.innerHTML=output;
 }
