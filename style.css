@@ -1,0 +1,75 @@
+body{
+    background: linear-gradient(to right,red,blue);
+    display: flex;
+    justify-content: center;
+}
+#maindiv{
+width: 350px;
+height: fit-content;
+background-color: #fff;
+border-radius: 30px;
+margin-top: 100px;
+}
+#maindiv-head{
+    padding: 5%;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#maindiv-head-txt{
+    width: 80%;
+    border: 1px solid aqua;
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    
+}
+#add-btn{
+width: 50px;
+height: 45px;
+border-radius: 10px;
+background-color:#236AEAFF;
+border: none;
+cursor: pointer;
+color: #fff;
+font-size: 20px;
+}
+#maindiv-body{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+#maindiv-body-div{
+    width: 100%;
+    height: 45px;
+    background-color: #C3DCE3FF;
+    margin-top: 10px;
+    border-radius: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+#maindiv-body-div-del{
+    width: 50px;
+    height: 35px;
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#maindiv-body-div-txt{
+    width: 85%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
