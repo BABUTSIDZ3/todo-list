@@ -1,24 +1,52 @@
 const add = document.getElementById('add-btn')
 const body = document.getElementById('maindiv-body')
 const headtxt = document.getElementById('maindiv-head-txt')
-add.addEventListener('click', function () {
 
-if(headtxt.value==''){
-headtxt.style.border='2px solid red'
-alert('Please fill in the field')
-}else{
-    headtxt.style.border='1px solid aqua'
-    const element = document.createElement('div')
-    body.appendChild(element)
-    element.setAttribute('id', 'maindiv-body-div')
-    const txtdiv = document.createElement('div')
-    txtdiv.setAttribute('id', 'maindiv-body-div-txt')
-    const del = document.createElement('div')
-    del.setAttribute('id', 'maindiv-body-div-del')
-    txtdiv.textContent =headtxt.value
-        del.textContent = 'delete'
-    element.append(txtdiv, del)
-    del.addEventListener('click', function () {
-        del.parentElement.remove()
-    })}
+add.addEventListener('click',function(){
+if(headtxt.value.trim() !=0){
+    let localitems=JSON.parse(localStorage.getItem('localitem'))
+    if(localitems===null){
+        tasklist=[]
+    }else{
+        tasklist=localitems
+    }
+    tasklist.push(headtxt.value)
+    localStorage.setItem('localitem',JSON.stringify(tasklist))
+    showlist()
+}
 })
+
+function showlist(){
+
+    let output=''
+
+    let localitems=JSON.parse(localStorage.getItem('localitem'))
+    if(localitems===null){
+        tasklist=[]
+    }else{
+        tasklist=localitems
+    }
+    tasklist.forEach((data,index) => {
+        output +=`
+        <div class="todolist">
+        <p class="ptext">${data}</p>
+    <button class="deletetask" onCliCk="deleteitem(${index})">delete</button>
+        </div>
+        `
+        
+    });
+    body.innerHTML=output;
+}
+showlist()
+
+function deleteitem(index){
+    tasklist.splice(index, 1)
+    localStorage.setItem('localitem',JSON.stringify(tasklist))
+    showlist()
+}
+function cleartask(){
+    localStorage.clear()
+    showlist()
+}
+
+
